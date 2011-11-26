@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block extra_head %}
+
 <link rel='stylesheet' type='text/css' href='static/fullcalendar/fullcalendar.css' />
 <link rel='stylesheet' type='text/css' href='static/fullcalendar/fullcalendar.print.css' media='print' />
 <script type='text/javascript' src='static/jquery/jquery-1.5.2.min.js'></script>
@@ -20,11 +21,44 @@
 </script>
 
 {% endblock extra_head %}
-
 {% block body %}
+    
+    <div id='outer-wrapper'>
+    
+    <!-- skip links for text browsers -->
+    <span id='skiplinks' style='display:none;'>
+        <a href='#main'>skip to main </a> |
+        <a href='#sidebar'>skip to sidebar</a>
+    </span>
 
-{% include "event.html" %}
+    <div id='header-wrapper'><div class='header section' id='header'><div id='header-inner'>
+        <a href='http://www.nycsocialist.org/' style='display: block'>
+            <img alt='NYCsocialist.org' height='190px;' src='static/img/NYCS_Wisconsin_Egypt_Header_Cracked_Melded.png' style='display: block' width='760px; '/>
+        </a>
+    </div></div></div><!--header-wrapper-->
 
-<div id="calendar" />
-<div id="loading">Loading...</div>
+    <div id='content-wrapper'>
+    
+        <div id='crosscol-wrapper'></div>
+
+        <div id='main-wrapper'><div class='main section'>
+             {% include "event.html" %}
+    
+             <div id="calendar"></div>
+             <div id="loading">Loading...</div>
+        </div></div><!--main-wrapper-->
+   
+        <div id='sidebar-wrapper'><div id='sidebar' class='sidebar section'>
+            <p>Here is some information about the ISO.</p>
+            <p>Click <a href="nonsense">here</a> to join our mailing list.</p>
+        </div></div><!--sidebar-wrapper-->
+
+        <div class="clear">&nbsp;</div>
+    
+    </div><!--content-wrapper-->
+
+    <div id='footer-wrapper'></div>
+
+    </div><!--outer-wrapper-->
+
 {% endblock body %}

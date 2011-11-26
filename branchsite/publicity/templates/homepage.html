@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<link rel='stylesheet' type='text/css' href='static/fullcalendar/fullcalendar.css' />
+<link rel='stylesheet' type='text/css' href='static/fullcalendar/fullcalendar.print.css' media='print' />
+<script type='text/javascript' src='static/jquery/jquery-1.5.2.min.js'></script>
+<!--<script type='text/javascript' src='staticjquery/jquery-ui-1.8.11.custom.min.js'></script>-->
+<script type='text/javascript' src='static/fullcalendar/fullcalendar.min.js'></script>
+
+<script type='text/javascript'>
+    $(document).ready(function() {
+        $('#calendar').fullCalendar({
+            events: '/events/list',
+            loading: function(bool) {
+                if (bool) $('#loading').show();
+                else $('#loading').hide();
+            },
+        });
+    });
+</script>
+
+{% endblock extra_head %}
+
+{% block body %}
+
+{% include "event.html" %}
+
+<div id="calendar" />
+<div id="loading">Loading...</div>
+{% endblock body %}

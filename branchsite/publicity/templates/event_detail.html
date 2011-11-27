@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div>
+    <h2>{{ event.start.month }} {{ event.start.day }} - {{ event.title }}</h2>
+    <p><strong>{{ event.start }}</strong></p>
+    <p><strong>{{ event.summary }}</strong></p>
+    {% autoescape off %} <p>{{ event.description }}</p> {% endautoescape %} 
+</div>
+
+{% endblock body %}

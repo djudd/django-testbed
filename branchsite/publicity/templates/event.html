@@ -1,7 +1,13 @@
 <div>
-    <h3>{{ event.title }}</h3>
-    <p><strong>{{ event.start }}</strong></p>
-    <p><strong>{{ event.summary }}</strong></p>
-    <p>{{ event.description }}</p>
+    <h2>{{ event.start|date:"N j" }} - {{ event.title }}</h2>
+    <strong>
+        {{ event.subtitle }}<br/><br/>
+        {{ event.start|date:"g a l, F j, Y" }}<br/>
+        {{ event.location_name }}{% if event.location_address %}, {{ event.location_address }}{% endif %}<br/>
+        {% if event.location_directions %}({{ event.location_directions }})<br/>{% endif %}
+        <br/>
+    </strong>
+
+    {% autoescape off %} <p>{{ event.description }}</p> {% endautoescape %} 
 </div>
 

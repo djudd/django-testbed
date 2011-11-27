@@ -1,60 +1,25 @@
-/*
-Copied from nycsocialist.org, 2011-11-26...
-*/
-/*   
------------------------------------------------
-Blogger Template Style
-Name:     Denim
-Designer: Darren Delaye
-URL:      www.DarrenDelaye.com
-Date:     11 Jul 2006
------------------------------------------------
-*/
-/* Variable definitions
-====================
-<Variable name="bgColor" description="Page Background Color"
-type="color" default="#efefef">
-<Variable name="textColor" description="Text Color"
-type="color" default="#333333">
-<Variable name="linkColor" description="Link Color"
-type="color" default="#336699">
-<Variable name="headerBgColor" description="Page Header Background Color"
-type="color" default="#336699">
-<Variable name="headerTextColor" description="Page Header Text Color"
-type="color" default="#ffffff">
-<Variable name="headerCornersColor" description="Page Header Corners Color"
-type="color" default="#528bc5">
-<Variable name="mainBgColor" description="Main Background Color"
-type="color" default="#ffffff">
-<Variable name="borderColor" description="Border Color"
-type="color" default="#cccccc">
-<Variable name="dateHeaderColor" description="Date Header Color"
-type="color" default="#999999">
-<Variable name="sidebarTitleBgColor" description="Sidebar Title Background Color"
-type="color" default="#ffd595">
-<Variable name="sidebarTitleTextColor" description="Sidebar Title Text Color"
-type="color" default="#333333">
-<Variable name="bodyFont" description="Text Font"
-type="font" default="normal normal 100% Verdana, Arial, Sans-serif;">
-<Variable name="headerFont" description="Page Header Font"
-type="font" default="normal normal 210% Verdana, Arial, Sans-serif;">
-<Variable name="startSide" description="Start side in blog language"
-type="automatic" default="left">
-<Variable name="endSide" description="End side in blog language"
-type="automatic" default="right">
-*/
+*
+{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+}
+
 body {
+    font: x-small Verdana, Arial;
+    text-align: center;
+    font-size: small;
     background: #0e152e;
     background-image:url("http://kornegay.net/images/SP.png");
     background-repeat:repeat;
-    margin: 0;
-    padding: 0px;
-    font: x-small Verdana, Arial;
-    text-align: center;
-    color: #333333;
-    font-size/* */:/**/small;
-    font-size: /**/small;
 }
+
+.clear
+{
+    clear: both;
+}
+
 a:link {
     color: #003366;
 }
@@ -64,241 +29,56 @@ a:visited {
 a img {
     border-width: 0;
 }
-#outer-wrapper {
-font: normal normal 102% Arial, sans-serif;
-}
-/* Header
------------------------------------------------ */
-#header-wrapper {
-margin:0;
-padding: 0;
-text-align: left;
-}
-#header {
-width: 760px;
-margin: 0 auto;
-background-color: #cb2a2a;
-border: 1px solid #eaedf3;
-color: #ffffff;
-padding: 0;
-font: normal bold 232% Arial, sans-serif;
-}
-h1.title {
-    padding-top: 38px;
-    margin: 0 14px .1em;
-    line-height: 1.2em;
-    font-size: 100%;
-}
-h1.title a, h1.title a:visited {
-    color: #ffffff;
-    text-decoration: none;
-}
-#header .description {
-display: block;
-margin: 0 14px;
-padding: 0 0 40px;
-line-height: 1.4em;
-font-size: 50%;
-}
-/* Content
------------------------------------------------ */
-.clear {
-    clear: both;
-}
-#content-wrapper {
-width: 760px;
-margin: 0 auto;
-padding: 0 0 15px;
-text-align: left;
-background-color: #fefefe;
-border: 1px solid #eaedf3;
-border-top: 0;
-}
-#main-wrapper {
-margin-left: 14px;
-width: 464px;
-float: left;
-background-color: #fefefe;
-display: inline;       /* fix for doubling margin in IE */
-word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
-overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
-}
-#sidebar-wrapper {
-margin-right: 14px;
-width: 240px;
-float: right;
-background-color: #fefefe;
-background: #eaedf3;
-display: inline;       /* fix for doubling margin in IE */
-word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
-overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
-}
-/* Headings
------------------------------------------------ */
-h2, h3 {
-    margin: 0;
-}
-/* Posts
------------------------------------------------ */
-.date-header {
-    margin: 1.5em 0 0;
-    font-weight: normal;
-    color: #9999aa;
-    font-size: 100%;
-}
-.post {
-    margin: 0 0 1.5em;
-    padding-bottom: 1.5em;
-}
-.post-title {
-    margin: 0;
-    padding: 0;
-    font-size: 150%;
-    font-weight: bold;
-    line-height: 1.1em;
-}
-.post-title a, .post-title a:visited, .post-title strong {
-    text-decoration: none;
-    color: #aa0000;
-    font-weight: bold;
-}
-.post div {
-    margin: 0 0 .75em;
-    line-height: 1.3em;
-}
-.post-footer {
-    margin: -.25em 0 0;
-    color: #333333;
-    font-size: 87%;
-}
-.post-footer .span {
-    margin-right: .3em;
-}
-.post img {
-    padding: 4px;
-    border: 1px solid #eaedf3;
-}
-.post blockquote {
-    margin: 1em 20px;
-}
-.post blockquote p {
-    margin: .75em 0;
-}
-/* Comments
------------------------------------------------ */
-#comments h4 {
-margin: 1em 0;
-color: #9999aa;
-}
-#comments h4 strong {
-font-size: 110%;
-}
-#comments-block {
-margin: 1em 0 1.5em;
-line-height: 1.3em;
-}
-#comments-block dt {
-margin: .5em 0;
-}
-#comments-block dd {
-margin: .25em 0 0;
-}
-#comments-block dd.comment-footer {
-margin: -.25em 0 2em;
-line-height: 1.4em;
-font-size: 78%;
-}
-#comments-block dd p {
-margin: 0 0 .75em;
-}
-.deleted-comment {
-    font-style:italic;
-    color:gray;
-}
-.feed-links {
-    clear: both;
-    line-height: 2.5em;
-}
-#blog-pager-newer-link {
-float: left;
-}
-#blog-pager-older-link {
-float: right;
-}
-#blog-pager {
-text-align: center;
-}
-/* Sidebar Content
------------------------------------------------ */
-.sidebar h2 {
-    margin: 1.6em 0 .5em;
-    padding: 4px 5px;
-    background-color: #eaedf3;
-    font-size: 100%;
-    color: #aa0000;
-}
-.sidebar ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-.sidebar li {
-    margin: 0;
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: .5em;
-    padding-left: 15px;
-    text-indent: -15px;
-    line-height: 1.5em;
-}
-.sidebar {
-    color: #333333;
-    line-height:1.3em;
-}
-.sidebar .widget {
-    margin-bottom: 1em;
-}
-.sidebar .widget-content {
-    margin: 0 5px;
-}
-/* Profile
------------------------------------------------ */
-.profile-img {
-    float: left;
-    margin-top: 0;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    margin-left: 0;
-    padding: 4px;
-    border: 1px solid #eaedf3;
-}
-.profile-data {
-    margin:0;
-    text-transform:uppercase;
-    letter-spacing:.1em;
-    font-weight: bold;
-    line-height: 1.6em;
-    font-size: 78%;
-}
-.profile-datablock {
-    margin:.5em 0 .5em;
-}
-.profile-textblock {
-    margin: 0.5em 0;
-    line-height: 1.6em;
-}
-/* Footer
------------------------------------------------ */
-#footer {
-clear: both;
-text-align: center;
-color: #333333;
-}
-#footer .widget {
-margin:.5em;
-padding-top: 20px;
-font-size: 85%;
-line-height: 1.5em;
-text-align: left;
+
+p {
+    margin-top:0.5em;
+    margin-bottom:0.5em;
 }
 
+#outer-wrapper {
+    font: normal normal 102% Arial, sans-serif;
+    width: 960px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #f5f4f0;
+    padding: 1px;
+}
+#navbar-wrapper {
+    padding: 7px;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: #C1CDCD;
+    font-weight: bold;
+    text-align: center;
+}
+#main-wrapper {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 530px;
+    float: left;
+    display: inline;       /* fix for doubling margin in IE */
+    word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+    overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+#sidebar-wrapper {
+    width: 410px;
+    float: right;
+    display: inline;       /* fix for doubling margin in IE */
+    word-wrap: break-word; /* fix for long text breaking sidebar float in IE */
+    overflow: hidden;      /* fix for long non-text content breaking IE sidebar float */
+}
+.sidebar {
+    padding-top: 5px;
+    margin-bottom: 5px;
+    border-style: solid;
+    border-width: medium;
+    border-color: #C1CDCD;
+    border-top-style: none;
+    background-color: #E0EEEE;
+}
+.sidebar>p {
+    margin-left: 0.5em;
+}
+.sidebar>p:first-child {
+    margin-top: 0;
+}

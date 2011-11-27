@@ -23,35 +23,51 @@
 {% endblock extra_head %}
 {% block body %}
     
-    <div id='outer-wrapper'>
+<div id='outer-wrapper'>
     
-    <!-- skip links for text browsers -->
-    <span id='skiplinks' style='display:none;'>
-        <a href='#main'>skip to main </a> |
-        <a href='#sidebar'>skip to sidebar</a>
-    </span>
+    <div id='header-wrapper'>
+    
+        <div class='header'>
+            <a href='nonsense' style='display: block'>
+                <img alt='NYCsocialist.org' src='static/img/NYCS_Wisconsin_Egypt_Header_Cracked_Melded.png' style='display: block' height='190px;' width='960px; '/>
+            </a>
+        </div>
+       
+        <div id='navbar-wrapper'> 
+            <a href='nonsense'>Home</a> | 
+            <a href='nonsense'>About</a> | 
+            <a href='http://socialistworker.org'>News at SocialistWorker.org</a> | 
+            <a href='http://wearemany.org'>Audio/Visual at WeAreMany.org</a> | 
+            <a href='nonsense'>ISO Branches in New York</a> | 
+            <a href='http://www.internationalsocialist.org'>Around the Country</a> 
+        </div>
 
-    <div id='header-wrapper'><div class='header section' id='header'><div id='header-inner'>
-        <a href='http://www.nycsocialist.org/' style='display: block'>
-            <img alt='NYCsocialist.org' height='190px;' src='static/img/NYCS_Wisconsin_Egypt_Header_Cracked_Melded.png' style='display: block' width='760px; '/>
-        </a>
-    </div></div></div><!--header-wrapper-->
+    </div><!--header-wrapper-->
 
     <div id='content-wrapper'>
     
-        <div id='crosscol-wrapper'></div>
-
-        <div id='main-wrapper'><div class='main section'>
-             {% include "event.html" %}
-    
-             <div id="calendar"></div>
-             <div id="loading">Loading...</div>
+        <div id='main-wrapper'><div class='main'>
+            {% for event in events %}
+                {% include "event.html" %}
+            {% endfor %}
         </div></div><!--main-wrapper-->
    
-        <div id='sidebar-wrapper'><div id='sidebar' class='sidebar section'>
-            <p>Here is some information about the ISO.</p>
-            <p>Click <a href="nonsense">here</a> to join our mailing list.</p>
-        </div></div><!--sidebar-wrapper-->
+        <div id='sidebar-wrapper'>
+            <div class='sidebar'>
+                <p>Welcome to the official website of the International Socialist Organization in New York City.</p>
+                <p>Click <a href="nonsense">here</a> to join a branch mailing list.</p>
+                <p>To learn more about socialism and our politics, read "<a href="http://socialistworker.org/where-we-stand">Where We Stand</a>."</p>
+                <p>For more info, get in touch with one of <a href="nonsense">our branches</a>, call us at (646) 452-8662, or write to nyciso@gmail.com.</p>
+            </div>
+            
+            <div class='clear'>&nbsp;</div>
+            
+            <div> 
+                <h3>Event Calendar</h3>
+                <div id="calendar"></div>
+                <div id="loading">Loading...</div>
+            </div>
+        </div><!--sidebar-wrapper-->
 
         <div class="clear">&nbsp;</div>
     
@@ -59,6 +75,6 @@
 
     <div id='footer-wrapper'></div>
 
-    </div><!--outer-wrapper-->
+</div><!--outer-wrapper-->
 
 {% endblock body %}

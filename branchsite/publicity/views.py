@@ -5,8 +5,8 @@ import simplejson
 from models import Event
 
 def home(request):
-    event = Event.objects.get()
-    return render_to_response('homepage.html', {'event':event})
+    events = Event.objects.order_by('start')[:3]
+    return render_to_response('homepage.html', {'events':events})
 
 def events_list(request):
     events = Event.objects.all()
@@ -19,3 +19,7 @@ def events_list(request):
         })
 
     return HttpResponse(simplejson.dumps(response), 'application/json')
+
+def event_detail(request):
+    event = Event.objects.get()
+    return render_to_response('event_detail.html', {'event':event})

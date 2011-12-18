@@ -1,0 +1,48 @@
+{% load i18n %}
+{% load flatpages %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{% if site_name %}{{ site_name }} : {% endif %}{% block head_title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/theme.css" />
+        {% block extra_head %}
+        {% endblock %}
+    </head>
+
+    <body>
+    <div id='outer-wrapper'>
+        
+        <div id='header-wrapper'>
+        
+            <div class='header'>
+                <a href='nonsense' style='display: block'>
+                    <img alt='NYCsocialist.org' src='/static/img/NYCS_Wisconsin_Egypt_Header_Cracked_Melded.png' style='display: block' height='190px;' width='960px; '/>
+                </a>
+            </div>
+           
+            <div id='navbar-wrapper'> 
+                <a href='/'>Home</a> | 
+                {% get_flatpages as flatpages %}
+                {% for page in flatpages %}
+                    <a href='{{ page.url }}'>{{ page.title }}</a> |
+                {% endfor %}
+                <a href='http://socialistworker.org'>News at SocialistWorker.org</a> | 
+                <a href='http://wearemany.org'>Audio/Visual at WeAreMany.org</a> | 
+                <a href='http://www.internationalsocialist.org'>Branches Around the Country</a> 
+            </div>
+
+        </div><!--header-wrapper-->
+
+        <div id='content-wrapper'>
+            {% block body %}
+            {% endblock %}   
+            <div class="clear">&nbsp;</div>     
+        </div><!--content-wrapper-->
+
+        <div id='footer-wrapper'></div>
+
+    </div><!--outer-wrapper-->
+    </body>
+</html>

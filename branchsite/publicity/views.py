@@ -22,4 +22,4 @@ def events_list(request):
 
 def event_detail(request):
     event = Event.objects.get()
-    return render_to_response('event_detail.html', {'event':event})
+    return render_to_response('publicity/event_detail.html', {'event':event})

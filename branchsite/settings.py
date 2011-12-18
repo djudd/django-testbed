@@ -1,5 +1,11 @@
 # Django settings for branchsite project.
 
+import os.path
+
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+
+print "PD: %s" % PROJECT_DIR
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -72,7 +78,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/david/branch-site/branchsite/publicity/static',
+    os.path.join(PROJECT_DIR, 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -104,6 +110,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
 ROOT_URLCONF = 'branchsite.urls'
@@ -112,7 +119,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/home/david/branch-site/branchsite/publicity/templates',
+    os.path.join(PROJECT_DIR, 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -125,8 +132,8 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     'south',
-#    'schedule',
     'publicity',
+    'django.contrib.flatpages',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

@@ -5,7 +5,7 @@ import simplejson
 from models import Event
 
 def home(request):
-    events = Event.objects.order_by('start')[:3]
+    events = Event.objects.order_by('-start')[:3]
     return render_to_response('homepage.html', {'events':events})
 
 def events_list(request):
